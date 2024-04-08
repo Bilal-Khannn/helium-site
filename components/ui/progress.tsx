@@ -25,13 +25,13 @@ const Progress = React.forwardRef<
 ));
 Progress.displayName = ProgressPrimitive.Root.displayName;
 
-function ProgressDemo() {
+function ProgressDemo({ value }: { value: number }) {
     const [progress, setProgress] = React.useState(13);
 
     React.useEffect(() => {
-        const timer = setTimeout(() => setProgress(66), 500);
+        const timer = setTimeout(() => setProgress(value), 500);
         return () => clearTimeout(timer);
-    }, []);
+    }, [value]);
 
     return <Progress value={progress} />;
 }

@@ -3,8 +3,9 @@ import { Header } from '../components/Header';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { SquareArrowOutUpRight } from 'lucide-react';
-import { Detail } from '@/components/detail';
 import { ProgressDemo } from '@/components/ui/progress';
+import { Detail } from '@/components/Detail';
+import { CardDemo } from '@/components/ui/card';
 
 export default function Home() {
     return (
@@ -63,9 +64,24 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className='my-40 max-w-4xl mx-auto'>
-                <h1 className='text-center text-custom-orange text-5xl mb-16'>Roadmap</h1>
-               <ProgressDemo />
+            <section className="my-40 max-w-6xl mx-auto">
+                <h1 className="text-center text-custom-orange text-5xl mb-16">
+                    Roadmap
+                </h1>
+                <div className="flex gap-12">
+                    <div className="flex flex-col gap-8 w-[350px]">
+                        <ProgressDemo value={50} />
+                        <CardDemo />
+                    </div>
+                    <div className="flex flex-col gap-8 w-[350px]">
+                        <ProgressDemo value={33} />
+                        <CardDemo />
+                    </div>
+                    <div className="flex flex-col gap-8 w-[350px]">
+                        <ProgressDemo value={88} />
+                        <CardDemo />
+                    </div>
+                </div>
             </section>
         </div>
     );
