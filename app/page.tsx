@@ -6,6 +6,9 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 import { ProgressDemo } from '@/components/ui/progress';
 import { Detail } from '@/components/Detail';
 import { CardDemo } from '@/components/ui/card';
+import { AccordionDemo } from '@/components/ui/accordion';
+import { Footer } from '@/components/Footer';
+import Count from '@/components/Counter';
 
 export default function Home() {
     return (
@@ -15,7 +18,7 @@ export default function Home() {
             </div>
             <Header />
 
-            <section className="mt-40 max-w-7xl mx-auto">
+            <section className="mt-40 max-w-[85%] mx-auto">
                 <div className=" gap-40 flex">
                     <Image
                         src={'/bull-logo.jpeg'}
@@ -23,6 +26,7 @@ export default function Home() {
                         height={400}
                         width={400}
                         className="rounded-full w-[40%] h-fit"
+                        priority
                     />
                     <div className="w-[60%]">
                         <Button
@@ -64,24 +68,57 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="my-40 max-w-6xl mx-auto">
-                <h1 className="text-center text-custom-orange text-5xl mb-16">
-                    Roadmap
-                </h1>
-                <div className="flex gap-12">
-                    <div className="flex flex-col gap-8 w-[350px]">
-                        <ProgressDemo value={50} />
-                        <CardDemo />
-                    </div>
-                    <div className="flex flex-col gap-8 w-[350px]">
-                        <ProgressDemo value={33} />
-                        <CardDemo />
-                    </div>
-                    <div className="flex flex-col gap-8 w-[350px]">
-                        <ProgressDemo value={88} />
-                        <CardDemo />
+            <section className="my-40 max-w-6xl mx-auto relative" id="roadmap">
+                <div className="relative z-10">
+                    <div className="w-full p-12 border rounded-xl border-custom-orange dark:bg-black">
+                        <h1 className="text-center text-custom-orange text-5xl mb-16">
+                            Roadmap
+                        </h1>
+                        <div className="flex flex-col gap-12 justify-center items-center">
+                            <div className="flex flex-col gap-8 w-full">
+                                <div className="flex items-center gap-6">
+                                    <ProgressDemo value={20} />
+                                    <span className="text-2xl text-custom-orange flex gap-1">
+                                        <Count value={20} /> %
+                                    </span>
+                                </div>
+                                <AccordionDemo />
+                            </div>
+                            <div className="flex flex-col gap-8 w-full">
+                                <div className="flex items-center gap-6">
+                                    <ProgressDemo value={50} />
+                                    <span className="text-2xl text-custom-orange flex gap-1">
+                                        <Count value={50} />%
+                                    </span>
+                                </div>
+                                <AccordionDemo />
+                            </div>
+                            <div className="flex flex-col gap-8 w-full">
+                                <div className="flex items-center gap-6">
+                                    <ProgressDemo value={88} />
+                                    <span className="text-2xl text-custom-orange flex gap-1">
+                                        <Count value={88} />%
+                                    </span>
+                                </div>
+                                <AccordionDemo />
+                            </div>
+                        </div>
                     </div>
                 </div>
+                {/* <div className="absolute -bottom-40 right-0 z-50">
+                    <Image
+                        src={'/bull-sticker.jpg'}
+                        alt="bull logo"
+                        height={400}
+                        width={400}
+                        className="rounded-3xl"
+                        priority
+                    />
+                </div> */}
+            </section>
+
+            <section className="mt-40 mb-20 max-w-6xl mx-auto">
+                <Footer />
             </section>
         </div>
     );
