@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 import { Button } from './button';
+import Image from 'next/image';
 
 const Card = React.forwardRef<
     HTMLDivElement,
@@ -79,34 +80,13 @@ CardFooter.displayName = 'CardFooter';
 
 function CardDemo() {
     return (
-        <Card className='border-custom-orange'>
-            <CardHeader>
-                <CardTitle>Ecosystem</CardTitle>
-            </CardHeader>
-            <CardContent className='flex flex-col gap-8'>
-                <Card className="w-fit border-custom-orange">
-                    <CardHeader>
-                        <CardTitle>Create project</CardTitle>
-                        <CardDescription>
-                            Deploy your new project in one-click.
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <p>Some content</p>
-                    </CardContent>
-                </Card>
-                <Card className="w-fit border-custom-orange">
-                    <CardHeader>
-                        <CardTitle>Create project</CardTitle>
-                        <CardDescription>
-                            Deploy your new project in one-click.
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <p>Some content</p>
-                    </CardContent>
-                </Card>
-            </CardContent>
+        <Card className="w-[350px] transform transition duration-300 hover:scale-105 border border-custom-orange">
+           
+                <Image src={'/bull-sticker.jpg'} alt='bull sticker' height={600} width={600}/>
+            <CardFooter className="flex justify-between">
+                <Button variant="outline">Cancel</Button>
+                <Button>Deploy</Button>
+            </CardFooter>
         </Card>
     );
 }

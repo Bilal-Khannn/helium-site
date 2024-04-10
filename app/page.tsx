@@ -5,14 +5,17 @@ import { Button } from '@/components/ui/button';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import { ProgressDemo } from '@/components/ui/progress';
 import { Detail } from '@/components/Detail';
-import { CardDemo } from '@/components/ui/card';
 import { AccordionDemo } from '@/components/ui/accordion';
 import { Footer } from '@/components/Footer';
 import Count from '@/components/Counter';
+import { BackgroundBeams } from '@/components/background-beams';
+import { CardDemo } from '@/components/ui/card';
+import { ThreeDCardDemo } from '@/components/3d-card';
 
 export default function Home() {
     return (
         <div className="relative">
+            <BackgroundBeams />
             <div className="absolute right-7 top-7">
                 <ModeToggle />
             </div>
@@ -68,8 +71,10 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="my-40 max-w-6xl mx-auto relative" id="roadmap">
-                <div className="relative z-10">
+            <section className="my-40 w-[100%] mx-auto relative" id="roadmap">
+                {/* <BackgroundBeams /> */}
+
+                <div className="relative z-10 max-w-6xl mx-auto">
                     <div className="w-full p-12 border rounded-xl border-custom-orange dark:bg-black">
                         <h1 className="text-center text-custom-orange text-5xl mb-16">
                             Roadmap
@@ -105,16 +110,33 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                {/* <div className="absolute -bottom-40 right-0 z-50">
-                    <Image
-                        src={'/bull-sticker.jpg'}
-                        alt="bull logo"
-                        height={400}
-                        width={400}
-                        className="rounded-3xl"
-                        priority
+            </section>
+
+            <section className="w-full">
+                {/* <BackgroundBeams /> */}
+                <h1 className="text-center text-custom-orange text-5xl mb-32">
+                    Our team
+                </h1>
+                <div className="w-full flex justify-center items-center gap-10 flex-wrap">
+                    <ThreeDCardDemo
+                        name="Alpha"
+                        profession="Frontend Developer"
+                        url="/bull-sticker.jpg"
+                        className="order-3"
                     />
-                </div> */}
+                    <ThreeDCardDemo
+                        name="You"
+                        profession="Cairo Dev, Smart Contract Auditor"
+                        url="/bull-sticker.jpg"
+                        className="-mt-56"
+                    />
+                    <ThreeDCardDemo
+                        name="Your Friend"
+                        profession="Marketing Lead"
+                        url="/bull-sticker.jpg"
+                        className="order-2"
+                    />
+                </div>
             </section>
 
             <section className="mt-40 mb-20 max-w-6xl mx-auto">
