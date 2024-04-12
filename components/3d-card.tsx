@@ -49,7 +49,7 @@ export const CardContainer = ({
         <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
             <div
                 className={cn(
-                    'py-20 flex items-center justify-center',
+                    'py-10 flex items-center justify-center',
                     containerClassName
                 )}
                 style={{
@@ -172,7 +172,7 @@ export function ThreeDCardDemo({
     name: string;
     profession: string;
     url: string;
-    className: string;
+    className?: string;
 }) {
     return (
         <CardContainer className={cn('inter-var', className)}>

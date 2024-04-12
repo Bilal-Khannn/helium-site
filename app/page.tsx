@@ -1,3 +1,4 @@
+'use client';
 import { ModeToggle } from '@/components/mode-toggle';
 import { Header } from '../components/Header';
 import Image from 'next/image';
@@ -8,41 +9,53 @@ import { Detail } from '@/components/Detail';
 import { AccordionDemo } from '@/components/ui/accordion';
 import { Footer } from '@/components/Footer';
 import Count from '@/components/Counter';
-import { BackgroundBeams } from '@/components/background-beams';
-import { CardDemo } from '@/components/ui/card';
 import { ThreeDCardDemo } from '@/components/3d-card';
+import { SparklesCore } from '@/components/sparkles';
 
 export default function Home() {
     return (
         <div className="relative">
-            <BackgroundBeams />
-            <div className="absolute right-7 top-7">
+            <div className="absolute h-full w-[100%] overflow-hidden">
+                <SparklesCore
+                    id="tsparticlesfullpage"
+                    background="transparent"
+                    minSize={0.6}
+                    maxSize={1.4}
+                    particleDensity={100}
+                    className="w-full h-full"
+                    particleColor="#EA580C"
+                />
+            </div>
+
+            <div className="absolute right-7 top-7 hidden lg:block">
                 <ModeToggle />
             </div>
             <Header />
 
             <section className="mt-40 max-w-[85%] mx-auto">
-                <div className=" gap-40 flex">
+                <div className=" gap-40 flex lg:flex-row flex-col justify-center items-center">
                     <Image
                         src={'/bull-logo.jpeg'}
                         alt="bull logo"
                         height={400}
                         width={400}
-                        className="rounded-full w-[40%] h-fit"
+                        className="rounded-full w-[100%] hidden lg:block lg:w-[40%] h-fit"
                         priority
                     />
-                    <div className="w-[60%]">
+
+                    <div className="lg:w-[60%] w-[100%]">
                         <Button
                             size={'lg'}
-                            className="my-8 text-2xl p-8 rounded-[2rem] flex gap-4"
+                            className="my-8 text-lg lg:text-xl xl:text-2xl p-8 rounded-[2rem] flex gap-4"
                         >
                             Buy on Bull <SquareArrowOutUpRight />
                         </Button>
+
                         <div className="flex flex-col gap-2">
                             <h1 className="italic text-custom-orange font-semibold text-2xl">
                                 A community first initiative
                             </h1>
-                            <p className="text-xl">
+                            <p className=" text-xl">
                                 Welcome to Starkbull, a community-driven meme
                                 token on a mission. Our objective is to reach
                                 the masses using our cute memey anime dog power.
@@ -52,7 +65,7 @@ export default function Home() {
                             <h1 className="italic text-custom-orange font-semibold text-2xl">
                                 Why Starkbull ?
                             </h1>
-                            <p className="text-xl">
+                            <p className=" text-xl">
                                 On Starknet, there is a tradition to name
                                 projects after anime characters. Many
                                 contributors, developers, and users adhere to
@@ -63,20 +76,18 @@ export default function Home() {
                             </p>
                         </div>
 
-                        <div className="flex gap-8 my-8">
+                        {/* <div className="flex gap-8 my-8">
                             <Detail number="25000+" value="Holders" />
                             <Detail number="40000+" value="Airdropped" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
 
             <section className="my-40 w-[100%] mx-auto relative" id="roadmap">
-                {/* <BackgroundBeams /> */}
-
-                <div className="relative z-10 max-w-6xl mx-auto">
+                <div className="relative z-10 lg:max-w-6xl mx-auto w-[80%]">
                     <div className="w-full p-12 border rounded-xl border-custom-orange dark:bg-black">
-                        <h1 className="text-center text-custom-orange text-5xl mb-16">
+                        <h1 className="text-center text-custom-orange text-5xl mb-16 font-bold">
                             Roadmap
                         </h1>
                         <div className="flex flex-col gap-12 justify-center items-center">
@@ -113,33 +124,30 @@ export default function Home() {
             </section>
 
             <section className="w-full">
-                {/* <BackgroundBeams /> */}
-                <h1 className="text-center text-custom-orange text-5xl mb-32">
+                <h1 className="text-center text-custom-orange text-5xl font-bold">
                     Our team
                 </h1>
-                <div className="w-full flex justify-center items-center gap-10 flex-wrap">
+                <div className="flex justify-center items-center gap-x-8 flex-wrap mt-20 2xl:mt-64">
                     <ThreeDCardDemo
                         name="Alpha"
                         profession="Frontend Developer"
                         url="/bull-sticker.jpg"
-                        className="order-3"
                     />
                     <ThreeDCardDemo
                         name="You"
                         profession="Cairo Dev, Smart Contract Auditor"
                         url="/bull-sticker.jpg"
-                        className="-mt-56"
+                        className='2xl:-mt-96'
                     />
                     <ThreeDCardDemo
                         name="Your Friend"
                         profession="Marketing Lead"
                         url="/bull-sticker.jpg"
-                        className="order-2"
                     />
                 </div>
             </section>
 
-            <section className="mt-40 mb-20 max-w-6xl mx-auto">
+            <section className="mt-40 pb-20 dark:pt-10 w-[100%] dark:bg-black dark:border dark:border-t-custom-orange">
                 <Footer />
             </section>
         </div>
