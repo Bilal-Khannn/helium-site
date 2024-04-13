@@ -55,42 +55,41 @@ const AccordionContent = React.forwardRef<
 
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle
-} from './card';
+import { Card, CardContent, CardHeader, CardTitle } from './card';
 
-function AccordionDemo() {
+function AccordionDemo({
+    data
+}: {
+    data?: {
+        title: string;
+        items: {
+            title: string;
+            content: string;
+        }[];
+    };
+}) {
     return (
         <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-                <AccordionTrigger className='text-2xl'>Is it accessible?</AccordionTrigger>
-                <AccordionContent className='flex justify-center items-center flex-col gap-4'>
-                    <Card className="w-full border-custom-orange">
-                        <CardHeader>
-                            <CardTitle>Create project</CardTitle>
-                            <CardDescription>
-                                Deploy your new project in one-click.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <p>Some content</p>
-                        </CardContent>
-                    </Card>
-                    <Card className="w-full border-custom-orange">
-                        <CardHeader>
-                            <CardTitle>Create project</CardTitle>
-                            <CardDescription>
-                                Deploy your new project in one-click.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <p>Some content</p>
-                        </CardContent>
-                    </Card>
+                <AccordionTrigger className="text-lg md:text-xl lg:text-2xl">
+                    {data?.title}
+                </AccordionTrigger>
+                <AccordionContent className="flex justify-center items-center flex-col gap-4">
+                    {data?.items?.map((item, index) => {
+                        return (
+                            <Card
+                                key={index}
+                                className="w-full border-custom-orange"
+                            >
+                                <CardHeader>
+                                    <CardTitle>{item.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p>{item.content}</p>
+                                </CardContent>
+                            </Card>
+                        );
+                    })}
                 </AccordionContent>
             </AccordionItem>
         </Accordion>

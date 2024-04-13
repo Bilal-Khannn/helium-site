@@ -142,13 +142,11 @@ const MobileNavSheet = ({
                 side={'left'}
                 className="items-center mt-7 flex flex-col gap-12 font-bold text-2xl text-custom-orange"
             >
-                <Link href={'#'}>Tokenomics</Link>
                 <Link href={'#roadmap'} scroll={true}>
                     Roadmap
                 </Link>
-                <Link href={'#'}>Integrations</Link>
-                <Link href={'#'}>Art</Link>
-                <Link href={'#'}>NFTs</Link>
+                <Link href={'#team'}>Team</Link>
+                <Link href={'/nft'}>NFTs</Link>
                 <div className="flex justify-center items-center gap-8 text-custom-orange">
                     <Link
                         href={'www.google.com'}

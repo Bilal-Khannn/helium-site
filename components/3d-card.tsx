@@ -167,11 +167,17 @@ export function ThreeDCardDemo({
     name,
     profession,
     url,
+    twitter,
+    github,
+    telegram,
     className
 }: {
     name: string;
     profession: string;
     url: string;
+    twitter: string;
+    github: string;
+    telegram: string;
     className?: string;
 }) {
     return (
@@ -207,7 +213,7 @@ export function ThreeDCardDemo({
                     <CardItem
                         translateZ={20}
                         as={Link}
-                        href="https://twitter.com/mannupaaji"
+                        href={twitter}
                         target="__blank"
                         className="px-4 py-2 rounded-xl text-3xl font-normal dark:text-white"
                     >
@@ -216,7 +222,7 @@ export function ThreeDCardDemo({
                     <CardItem
                         translateZ={20}
                         as={Link}
-                        href="https://twitter.com/mannupaaji"
+                        href={telegram}
                         target="__blank"
                         className="px-4 py-2 rounded-xl text-3xl font-normal dark:text-white"
                     >
@@ -225,7 +231,7 @@ export function ThreeDCardDemo({
                     <CardItem
                         translateZ={20}
                         as={Link}
-                        href="https://twitter.com/mannupaaji"
+                        href={github}
                         target="__blank"
                         className="px-4 py-2 rounded-xl text-3xl font-normal dark:text-white"
                     >
