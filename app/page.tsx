@@ -2,15 +2,14 @@
 import { ModeToggle } from '@/components/mode-toggle';
 import { Header } from '../components/Header';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import { ProgressDemo } from '@/components/ui/progress';
-import { Detail } from '@/components/Detail';
 import { AccordionDemo } from '@/components/ui/accordion';
 import { Footer } from '@/components/Footer';
 import Count from '@/components/Counter';
 import { ThreeDCardDemo } from '@/components/3d-card';
 import { SparklesCore } from '@/components/sparkles';
+import { Detail } from '../components/detail';
 import {
     marketing,
     launchNewDAppsInitiative,
@@ -114,45 +113,45 @@ export default function Home() {
                         <div className="flex flex-col gap-12 justify-center items-center">
                             <div className="flex flex-col gap-8 w-full">
                                 <div className="flex items-center gap-6">
-                                    <ProgressDemo value={20} />
+                                    <ProgressDemo value={80} />
                                     <span className="text-2xl text-custom-orange flex gap-1">
-                                        <Count value={20} /> %
+                                        <Count value={80} /> %
                                     </span>
                                 </div>
                                 <AccordionDemo data={marketing} />
                             </div>
                             <div className="flex flex-col gap-8 w-full">
                                 <div className="flex items-center gap-6">
-                                    <ProgressDemo value={50} />
+                                    <ProgressDemo value={20} />
                                     <span className="text-2xl text-custom-orange flex gap-1">
-                                        <Count value={50} />%
+                                        <Count value={20} />%
                                     </span>
                                 </div>
                                 <AccordionDemo data={launchStakingDApp} />
                             </div>
                             <div className="flex flex-col gap-8 w-full">
                                 <div className="flex items-center gap-6">
-                                    <ProgressDemo value={88} />
+                                    <ProgressDemo value={20} />
                                     <span className="text-2xl text-custom-orange flex gap-1">
-                                        <Count value={88} />%
+                                        <Count value={20} />%
                                     </span>
                                 </div>
                                 <AccordionDemo data={launchSAASDApp} />
                             </div>
                             <div className="flex flex-col gap-8 w-full">
                                 <div className="flex items-center gap-6">
-                                    <ProgressDemo value={88} />
+                                    <ProgressDemo value={80} />
                                     <span className="text-2xl text-custom-orange flex gap-1">
-                                        <Count value={88} />%
+                                        <Count value={80} />%
                                     </span>
                                 </div>
                                 <AccordionDemo data={recruitTeamMembers} />
                             </div>
                             <div className="flex flex-col gap-8 w-full">
                                 <div className="flex items-center gap-6">
-                                    <ProgressDemo value={88} />
+                                    <ProgressDemo value={80} />
                                     <span className="text-2xl text-custom-orange flex gap-1">
-                                        <Count value={88} />%
+                                        <Count value={80} />%
                                     </span>
                                 </div>
                                 <AccordionDemo
