@@ -214,6 +214,7 @@ export function ThreeDCardDemo({
                         translateZ={20}
                         as={Link}
                         href={twitter}
+                        rel="noopener noreferrer"
                         target="__blank"
                         className="px-4 py-2 rounded-xl text-3xl font-normal dark:text-white"
                     >
@@ -223,6 +224,7 @@ export function ThreeDCardDemo({
                         translateZ={20}
                         as={Link}
                         href={telegram}
+                        rel="noopener noreferrer"
                         target="__blank"
                         className="px-4 py-2 rounded-xl text-3xl font-normal dark:text-white"
                     >
@@ -232,6 +234,7 @@ export function ThreeDCardDemo({
                         translateZ={20}
                         as={Link}
                         href={github}
+                        rel="noopener noreferrer"
                         target="__blank"
                         className="px-4 py-2 rounded-xl text-3xl font-normal dark:text-white"
                     >

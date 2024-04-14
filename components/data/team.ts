@@ -11,7 +11,7 @@ export const teamMembers = [
         name: 'Helium',
         profession: 'Cairo Dev, Smart Contract Auditor',
         url: '/bull-sticker.jpg',
-        twitter: 'https://twitter.com/0xhelium',
+        twitter: 'https://twitter.com/0xhelium_',
         github: 'https://github.com/quentin-abei',
         telegram: 'https://t.me/starkbull'
     },
