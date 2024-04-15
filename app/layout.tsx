@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
     title: 'Starkbull',
     description:
-        'Explore the StarkBull universe, powered by $STBULL in a decentralized ecosystem. Trust in unruggable features. Join the revolution!'
+        'Explore the StarkBull universe, powered by starkbull token'
 };
 
 export default function RootLayout({
