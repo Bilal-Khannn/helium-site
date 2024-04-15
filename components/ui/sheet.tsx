@@ -142,32 +142,35 @@ const MobileNavSheet = ({
                 side={'left'}
                 className="items-center mt-7 flex flex-col gap-12 font-bold text-2xl text-custom-orange"
             >
-                <Link href={'#roadmap'} scroll={true}>
+                <Link
+                    href={'#roadmap'}
+                    scroll={true}
+                    onClick={() => setSheetOpen(false)}
+                >
                     Roadmap
                 </Link>
-                <Link href={'#team'}>Team</Link>
-                <Link href={'/nft'}>NFTs</Link>
+                <Link href={'#team'} onClick={() => setSheetOpen(false)}>
+                    Team
+                </Link>
+                <Link href={'/nft'} onClick={() => setSheetOpen(false)}>
+                    NFTs
+                </Link>
                 <div className="flex justify-center items-center gap-8 text-custom-orange">
                     <Link
-                        href={'www.google.com'}
-                        target="_blank"
-                        className="text-5xl "
+                        href="https://twitter.com/starkbull_off"
+                        target="__blank"
+                        rel="noreferrer noopener"
+                        className="text-5xl z-50"
                     >
                         <FaXTwitter />
                     </Link>
                     <Link
-                        className="text-5xl"
-                        href={'www.google.com'}
-                        target="_blank"
+                        className="text-5xl z-50"
+                        href="https://t.me/starkbullchat"
+                        target="__blank"
+                        rel="noreferrer noopener"
                     >
                         <FaTelegramPlane />
-                    </Link>
-                    <Link
-                        className="text-5xl"
-                        href={'www.google.com'}
-                        target="_blank"
-                    >
-                        <FaDiscord />
                     </Link>
                 </div>
             </SheetContent>
